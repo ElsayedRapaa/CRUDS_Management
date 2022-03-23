@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Normalize File -->
+    <link rel="stylesheet" href="./CSS/normalize.css">
+    <!-- Style File -->
+    <link rel="stylesheet" href="./CSS/style.css">
+    <title>CRUDS Operation Products Vanilla JavaScript</title>
+</head>
+
+<body>
+    <!-- Start Project -->
+    <!-- This Is Container -->
+    <div class="container">
+        <!-- Start The Main Title -->
+        <div class="main-title">
+            <h1 class="text-upper">cruds</h1>
+            <h3 class="text-upper">Product Management system</h3>
+        </div>
+        <!-- End The Main Title -->
+
+        <!-- Start Inputs Info -->
+
+        <!-- Input Title Product -->
+        <div class="input-title">
+            <input type="text" name="title" required class="title" placeholder="Title" autocomplete="off" />
+        </div>
+
+        <!-- Inputs Prices -->
+        <div class="input-price">
+            <div>
+                <label>Price</label>
+                <input type="number" onkeyup="sum_Price()" name="price" required class="price" placeholder="Price" />
+            </div>
+            <div>
+                <label>Taxes</label>
+                <input type="number" onkeyup="sum_Price()" name="taxes" class="taxes" value="0" placeholder="Taxes" />
+            </div>
+            <div>
+                <label>Ads</label>
+                <input type="number" onkeyup="sum_Price()" name="ads" class="ads" value="0" placeholder="Ads" />
+            </div>
+            <div>
+                <label>Discount</label>
+                <input type="number" onkeyup="sum_Price()" name="discount" class="discount" value="0" placeholder="Discount" />
+            </div>
+            <div>
+                <span class="text-total">Total Price</span>
+                <div class="total-price">0</div>
+            </div>
+        </div>
+
+        <!-- Input Count -->
+        <div class="input-count">
+            <input type="number" name="count" required class="count" placeholder="Count" autocomplete="off" />
+        </div>
+
+        <!-- Input Category -->
+        <div class="input-category">
+            <input type="text" name="category" required class="category" placeholder="Category" autocomplete="off" />
+        </div>
+
+        <!-- Button Create -->
+        <div class="btn-create">
+            <button class="create">Create</button>
+        </div>
+
+        <!-- Input Search -->
+        <div class="input-search">
+            <input type="text" onkeyup="search_Data(this.value)" name="search" class="search" placeholder="Search" autocomplete="off" />
+        </div>
+
+        <!-- Choose Search By -->
+        <div class="btn-search">
+            <button onclick="get_Search_Mood(this.id)" id="search-title" class="search-title">Search by title</button>
+            <button onclick="get_Search_Mood(this.id)" id="search-category" class="search-category">Search by Category</button>
+        </div>
+
+        <!-- Button Delete All -->
+        <div class="btn-delete-all">
+            <button onclick="delete_All()" class="delete-all">Delete All (<span></span>)</button>
+        </div>
+        <!-- End Inputs Info -->
+
+        <!-- Start Table Data -->
+
+        <table>
+            <thead>
+                <tr>
+                    <td>id</td>
+                    <td>title</td>
+                    <td>price</td>
+                    <td>taxes</td>
+                    <td>ads</td>
+                    <td>discount</td>
+                    <td>total</td>
+                    <td>category</td>
+                    <td>update</td>
+                    <td>delete</td>
+                </tr>
+            </thead>
+            <tbody class="tbody-table">
+                <!-- <tr>
+                    <td>1</td>
+                    <td>Samsung Note 1</td>
+                    <td>1500</td>
+                    <td>50</td>
+                    <td>20</td>
+                    <td>50</td>
+                    <td>1520</td>
+                    <td>Phone</td>
+                    <td><button class="update">Update</button></td>
+                    <td><button class="delete">Delete</button></td>
+                </tr> -->
+            </tbody>
+        </table>
+        <!-- End Table Data -->
+    </div>
+    <!-- End Container -->
+
+    <div class="succ-message">
+        <div class="succ">Your Data Is Added Done...</div>
+    </div>
+    <div class="error-message">
+        <div class="error">Sorry Please Try Again</div>
+    </div>
+
+
+    <!-- JavaScript File -->
+    <script src="./JS/file.js"></script>
+</body>
+
+</html>
